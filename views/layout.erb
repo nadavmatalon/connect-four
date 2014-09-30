@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Connect-Four</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Sniglet">
+		<link type="text/css" rel="stylesheet" href="./css/reset.css" />  
+		<link type="text/css" rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+		<script type="text/javascript" src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+ 		<script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+		<script type="text/javascript" src="./javascript/javascript.js"></script>
+	</head>
+	<body>
+		<%= yield %>
+	</body>
+</html>
+
+<script type="text/javascript">
+
+  	$.ajaxSetup ({  
+     	cache: false  
+  	});
+
+  	var currentTurn = 'black'
+  	var circleCount = [0, 0, 0, 0, 0, 0, 0];
+
+  	$('.add_circle').on('click', function() {
+  		var currentColumn = this.id;
+  		console.log(this.id);
+		switch(this.id) {
+		    case '0':
+  				var column = 'column_A';
+		        break;		    
+		    case '1':
+  				var column = 'column_B';
+		        break;		   
+		    case '2':
+  				var column = 'column_C';
+		        break;		    
+		    case '3':
+  				var column = 'column_D';
+		        break;		    
+		    case '4':
+  				var column = 'column_E';
+		        break;		    
+		    case '5':
+  				var column = 'column_F';
+		        break;		    
+		    case '6':
+  				var column = 'column_G';
+		        break;
+		}
+  		if (circleCount[currentColumn] < 6) {
+			var columnIdentifier = '#' + column;
+			var classIdentifier = column;
+  			var circleObject = "<div class='circle' id='" + column + "'></div>"
+	 		$(circleObject).addClass(column).appendTo('#circle-container');
+	  		if (currentTurn == 'black') {
+	  			$(columnIdentifier).addClass('color_black');
+	  			currentTurn = 'red';
+	  		} else {
+	  			$(columnIdentifier).addClass('color_red');
+	  			currentTurn = 'black';
+	  		};
+			$.post("/selected_circle",
+				{
+					mode: column
+				}, function(data) {
+					$(columnIdentifier).css({
+					  	'transition': 'margin-top, 0.5s',
+					  	'margin-top': data
+					 }).addClass(classIdentifier).prop('id', 'newId');
+			},'text');
+			circleCount[currentColumn] += 1;
+			console.log(circleCount);
+			console.log(column);
+  		}; 
+  	});
+
+  	// $('#column_A').on('click', function() {
+  	// 	console.log('column_A clicked');
+  	// 	if (counter_A < 6) {
+	 	// 	$("<div class='circle' id='circle_A'></div>").appendTo('#circle-container');
+	  // 		if (currentTurn == 'black') {
+	  // 			$('#circle_A').addClass('color_black');
+	  // 			currentTurn = 'red';
+	  // 		} else {
+	  // 			$('#circle_A').addClass('color_red');
+	  // 			currentTurn = 'black';
+	  // 		};
+			// $.post("/selected_circle",
+			// 	{
+			// 		mode: 'column_A'
+			// 	}, function(data) {
+			// 		$('#circle_A').css({
+			// 		  	'transition': 'margin-top, 0.5s',
+			// 		  	'margin-top': data
+			// 		 }).prop('id', 'newId');
+			// },'text');
+			// counter_A += 1;
+  	// 	}; 
+  	// });
+
+
+
+	// $('.circle').on('click', function() {
+	//    	var selected_circle = $(this);
+
+	//    		$('.circle').not(document.getElementById(this.id)).fadeOut(200, function() {
+	//    			$(this).remove();
+	//    		});
+	   		// $('.circle').not(document.getElementById(this.id)).fadeOut(200);
+
+	 //   	console.log(this.id);
+		// $.post("/selected_circle",
+		// 	{
+		// 		mode: this.id
+		// 	}, function(data) {
+		// 		selected_circle.css({
+		// 		  	'opacity': '1',
+		// 		  	'transition': 'margin-top, 0.5s',
+		// 		  	'margin-top': data
+		// 		 }).prop('id', 'newId');
+		// },'text');
+			// $("<div class='circle' id='column_A'></div>").appendTo('#circle-container');
+ 
+
+ 
+	  	// });
+
+
+ 			
+
+
+
+</script>
+
