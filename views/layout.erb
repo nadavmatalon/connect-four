@@ -55,6 +55,8 @@
   		if (circleCount[currentColumn] < 6) {
 			var columnIdentifier = '#' + column;
 			var classIdentifier = column;
+			var circleNumber = circleCount[currentColumn];
+			var circleColor = currentTurn;
   			var circleObject = "<div class='circle' id='" + column + "'></div>"
 	 		$(circleObject).addClass(column).appendTo('#circle-container');
 	  		if (currentTurn == 'black') {
@@ -66,13 +68,24 @@
 	  		};
 			$.post("/selected_circle",
 				{
-					mode: column
+					mode: column,
+					number: circleNumber,
+					color: circleColor
 				}, function(data) {
 					$(columnIdentifier).css({
 					  	'transition': 'margin-top, 0.5s',
 					  	'margin-top': data
-					 }).addClass(classIdentifier).prop('id', 'newId');
-			},'text');
+					}).addClass(classIdentifier).prop('id', 'newId');
+					if (circleColor == 'black') {
+						$.post("/black_count", {}, function(data) {
+							$('#black_count').text(data);
+						}, 'text');
+					} else {
+						$.post("/red_count", {}, function(data) {
+							$('#red_count').text(data);
+						}, 'text');
+					};
+				},'text');
 			circleCount[currentColumn] += 1;
 			// if (circleCount[currentColumn] == 6) {
 			// 	var buttonIdentifier = '#' + this.id;
@@ -83,57 +96,7 @@
   		}; 
   	});
 
-  	// $('#column_A').on('click', function() {
-  	// 	console.log('column_A clicked');
-  	// 	if (counter_A < 6) {
-	 	// 	$("<div class='circle' id='circle_A'></div>").appendTo('#circle-container');
-	  // 		if (currentTurn == 'black') {
-	  // 			$('#circle_A').addClass('color_black');
-	  // 			currentTurn = 'red';
-	  // 		} else {
-	  // 			$('#circle_A').addClass('color_red');
-	  // 			currentTurn = 'black';
-	  // 		};
-			// $.post("/selected_circle",
-			// 	{
-			// 		mode: 'column_A'
-			// 	}, function(data) {
-			// 		$('#circle_A').css({
-			// 		  	'transition': 'margin-top, 0.5s',
-			// 		  	'margin-top': data
-			// 		 }).prop('id', 'newId');
-			// },'text');
-			// counter_A += 1;
-  	// 	}; 
-  	// });
-
-
-
-	// $('.circle').on('click', function() {
-	//    	var selected_circle = $(this);
-
-	//    		$('.circle').not(document.getElementById(this.id)).fadeOut(200, function() {
-	//    			$(this).remove();
-	//    		});
-	   		// $('.circle').not(document.getElementById(this.id)).fadeOut(200);
-
-	 //   	console.log(this.id);
-		// $.post("/selected_circle",
-		// 	{
-		// 		mode: this.id
-		// 	}, function(data) {
-		// 		selected_circle.css({
-		// 		  	'opacity': '1',
-		// 		  	'transition': 'margin-top, 0.5s',
-		// 		  	'margin-top': data
-		// 		 }).prop('id', 'newId');
-		// },'text');
-			// $("<div class='circle' id='column_A'></div>").appendTo('#circle-container');
  
-
- 
-	  	// });
-
 
  			
 

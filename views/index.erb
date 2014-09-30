@@ -3,6 +3,11 @@
 	<div>Connect Four</div>
 </div>
 
+<div>Black Count:</div>
+<div id='black_count'>0</div>
+<div>Red Count:</div>
+<div id='red_count'>0</div>
+
 <div class='board-container'>
 
 	<button type='button' class='add_circle' id='0'>A</button>
@@ -17,13 +22,13 @@
 
 	</div>
 
-		<% counter = 35 %>
+		<% @counter = 35 %>
 		<% for i in 0..5 %>
 			<% for j in 0..6 %>
-				<div class='square' id='#{@counter}'>
+				<div class='square' id=<%= @counter.to_s %> >
 				</div>
-				<% counter += 1 %>
-				<% counter -= 14 if counter % 7 == 0 %>
+				<% @counter += 1 %>
+				<% @counter -= 14 if @counter % 7 == 0 %>
 			<% end %><br/>
 		<% end %>
  
