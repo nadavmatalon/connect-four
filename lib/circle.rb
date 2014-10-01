@@ -9,7 +9,5 @@ class Circle
 		@color = color
 	end
 
-
-
 end
 
