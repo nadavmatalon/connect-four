@@ -11,6 +11,14 @@
 	padding-bottom: 55px;
 }
 
+.container {
+	margin-top: 20px;
+	border: 1px solid rgb(10, 10, 10);
+	width: 62%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .circle-container {
 	border: 1px solid;
 	border-color: transparent;
@@ -162,16 +170,16 @@
 
 #black-container {
 	position: absolute;
-	margin-left: 24%;
+	margin-left: 6%;
 	text-align: center;
-	margin-top: -200px;
+	margin-top: -201px;
 }
 
 #red-container {
 	position: absolute;
-	margin-left: 70%;
+	margin-left: 51%;
 	text-align: center;
-	margin-top: -200px;
+	margin-top: -201px;
 }
 
 #black_count_title {
@@ -203,7 +211,6 @@
 }
 
 .spacer {
-	width: 100%;
 	height: 50px;
 }
 
