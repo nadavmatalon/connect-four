@@ -59,11 +59,18 @@
 			var circleColor = currentTurn;
   			var circleObject = "<div class='circle' id='" + column + "'></div>"
 	 		$(circleObject).addClass(column).appendTo('#circle-container');
+			circleCount[currentColumn] += 1;
+			if (circleCount[currentColumn] == 6) {
+				var buttonIdentifier = '#' + this.id;
+				$(buttonIdentifier).fadeOut(100);
+			};
 	  		if (currentTurn == 'black') {
 	  			$(columnIdentifier).addClass('color_black');
+	  			$('.add_circle').removeClass('color_black').addClass('color_red');
 	  			currentTurn = 'red';
 	  		} else {
 	  			$(columnIdentifier).addClass('color_red');
+	  			$('.add_circle').removeClass('color_red').addClass('color_black');
 	  			currentTurn = 'black';
 	  		};
 			$.post("/selected_circle",
@@ -86,11 +93,7 @@
 						}, 'text');
 					};
 				},'text');
-			circleCount[currentColumn] += 1;
-			// if (circleCount[currentColumn] == 6) {
-			// 	var buttonIdentifier = '#' + this.id;
-			// 	$(buttonIdentifier).fadeOut(200);
-			// };
+
 			// console.log(circleCount);
 			// console.log(column);
   		}; 

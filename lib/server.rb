@@ -51,7 +51,7 @@ post '/selected_circle' do
 	end
 	# puts 'black_update: ' + black_update.to_s
 	# puts 'red_update: ' + red_update.to_s
-	margin_top = 312 - (52 * session[(selected_column.to_sym)])
+	margin_top = 312 - (51 * session[(selected_column.to_sym)])
 	session[(selected_column.to_sym)] += 1
 	# puts session[:grid]
 	margin_top.to_s + 'px'
