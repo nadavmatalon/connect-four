@@ -94,7 +94,19 @@ def check_rows color
 end
 
 def check_columns color
-	0
+	result = 0
+	success = [color, color, color, color]
+	for i in "A".."G" do
+		row_color = []
+		row = session[:grid].circles.select {|circle| circle.column == i }
+		row.each {|circle| row_color << circle.color}
+		puts 'row ' + i + ': ' + row_color.join(',')
+		for j in 0..3 do
+			current_state = [row_color[j], row_color[j+1], row_color[j+2], row_color[j+3]]
+			result += 1 if current_state == success
+		end
+	end
+	result
 end
 
 def check_diagonals color
