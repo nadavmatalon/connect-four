@@ -57,6 +57,23 @@ post '/selected_circle' do
 	margin_top.to_s + 'px'
 end
 
+post '/new_game' do
+	session[:grid] = Grid.new
+	session[:current_turn] = 'black'
+	session[:total] = 0
+	session[:column_A] = 0
+	session[:column_B] = 0
+	session[:column_C] = 0
+	session[:column_D] = 0
+	session[:column_E] = 0
+	session[:column_F] = 0
+	session[:column_G] = 0
+	session[:black_count] = 0
+	session[:red_count] = 0
+	session[:circle_number] = ''
+	session[:circle_color] = ''
+end
+
 post '/black_count' do
 	session[:black_count].to_s
 end

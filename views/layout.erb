@@ -25,9 +25,11 @@
 
   	var currentTurn = 'black'
   	var circleCount = [0, 0, 0, 0, 0, 0, 0];
+  	var count = 0;
 
   	$('.add_circle').on('click', function() {
   		var currentColumn = this.id;
+  		count += 1;
   		// console.log(this.id);
 		switch(this.id) {
 		    case '0':
@@ -57,9 +59,12 @@
 			var classIdentifier = column;
 			var circleNumber = circleCount[currentColumn];
 			var circleColor = currentTurn;
+			var circleIdentifier = 'new-circle';
+			// console.log(circleIdentifier);
   			var circleObject = "<div class='circle' id='" + column + "'></div>"
 	 		$(circleObject).addClass(column).appendTo('#circle-container');
 			circleCount[currentColumn] += 1;
+
 			if (circleCount[currentColumn] == 6) {
 				var buttonIdentifier = '#' + this.id;
 				$(buttonIdentifier).fadeOut(100);
@@ -82,7 +87,7 @@
 					$(columnIdentifier).css({
 					  	'transition': 'margin-top, 0.5s',
 					  	'margin-top': data
-					}).addClass(classIdentifier).prop('id', 'newId');
+					}).addClass(classIdentifier).addClass(circleIdentifier).prop('id', circleIdentifier);
 					if (circleColor == 'black') {
 						$.post("/black_count", {}, function(data) {
 							$('#black_count').text(data);
@@ -92,11 +97,30 @@
 							$('#red_count').text(data);
 						}, 'text');
 					};
+					if (count == 42) {
+						$('.new-game-button').fadeIn(500);
+					}
 				},'text');
-
 			// console.log(circleCount);
 			// console.log(column);
   		}; 
+  	});
+
+  	$('.new-game-button').on('click', function() {
+  		$('.new-game-button').fadeOut(200);
+  		currentTurn = 'black'
+  		circleCount = [0, 0, 0, 0, 0, 0, 0];
+  		count = 0;
+		$('#black_count').text('0');
+		$('#red_count').text('0');
+		$('.new-circle').fadeOut(200, function() {
+			$.each(['#0', '#1', '#2', '#3', '#4', '#5', '#6'], function(i, el) {
+		    	$(el).fadeIn(200).css('display', 'inline-block');
+			});  
+			$('.new-circle').remove;
+		});
+		$.post("/new_game", {}, function(data) {
+		},'text');
   	});
 
 </script>
