@@ -23,9 +23,12 @@
      	cache: false  
   	});
 
-  	var currentTurn = 'black'
   	var circleCount = [0, 0, 0, 0, 0, 0, 0];
   	var count = 0;
+	var turn = ['black', 'red'];    
+	var randTurn = turn[Math.floor(Math.random() * turn.length)];
+  	var currentTurn = turn[Math.floor(Math.random() * turn.length)];
+	// console.log(randTurn)
 
 	$(document).ready(function() {
 
@@ -99,8 +102,17 @@
 	  		$('.new-game-button').fadeOut(200, function(){
 	  			$('.button-container').css('transition', 'opacity, 0.5s');
 	  			$('.button-container').css('opacity', '1');
+	  			$('.add_circle').prop("disabled", false);
+
 	  		});
-	  		currentTurn = 'black'
+	  		currentTurn = turn[Math.floor(Math.random() * turn.length)];
+	  		if (currentTurn == 'black') {
+	  			$('.add_circle').removeClass('color_black').addClass('color_red');
+	  			currentTurn = 'red';
+	  		} else {
+	  			$('.add_circle').removeClass('color_red').addClass('color_black');
+	  			currentTurn = 'black';
+	  		};	  		
 	  		circleCount = [0, 0, 0, 0, 0, 0, 0];
 	  		count = 0;
 			$('#black_count').text('0');
