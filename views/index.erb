@@ -1,57 +1,62 @@
 
 <div class='container'>
 
-<div class='title'>
-	<div>Connect Four</div>
-</div>
-
-<div class='board-container'>
-
-	<div class='new-game-container'>
-		<button class='new-game-button'>New Game</button>
+	<div class='title'>
+		<div>Connect Four</div>
 	</div>
 
-	<div class='button-container' id='button-container'>
-		<button type='button' class='add_circle column_A color_black' id='0'></button>
-		<button type='button' class='add_circle column_B color_black' id='1'></button>
-		<button type='button' class='add_circle column_C color_black' id='2'></button>
-		<button type='button' class='add_circle column_D color_black' id='3'></button>
-		<button type='button' class='add_circle column_E color_black' id='4'></button>
-		<button type='button' class='add_circle column_F color_black' id='5'></button>
-		<button type='button' class='add_circle column_G color_black' id='6'></button>
+	<div class='board-container'>
+
+		<div class='new-game-container'>
+			<button class='new-game-button'>New Game</button>
+		</div>
+
+		<div class='button-container' id='button-container'>
+			<button type='button' class='add_circle column_A color_black' id='0'></button>
+			<button type='button' class='add_circle column_B color_black' id='1'></button>
+			<button type='button' class='add_circle column_C color_black' id='2'></button>
+			<button type='button' class='add_circle column_D color_black' id='3'></button>
+			<button type='button' class='add_circle column_E color_black' id='4'></button>
+			<button type='button' class='add_circle column_F color_black' id='5'></button>
+			<button type='button' class='add_circle column_G color_black' id='6'></button>
+		</div>
+
+		<div class='circle-container' id='circle-container'>
+
+		</div>
+
+		<div class='grid-container' id='grid-container'>
+
+			<% @counter = 35 %>
+			<% for i in 0..5 %>
+				<% for j in 0..6 %>
+					<div class='square' id=<%= @counter.to_s %> >
+					</div>
+					<% @counter += 1 %>
+					<% @counter -= 14 if @counter % 7 == 0 %>
+				<% end %><br/>
+			<% end %>
+		</div>
 	</div>
 
-	<div class='circle-container' id='circle-container'>
+
+	<div id='black-container'>
+		<div id='black_count_title'>Black</div>
+		<div id='black_count'>0</div>
+	</div>
+
+	<div id='red-container'>
+		<div id='red_count_title'>Red</div>
+		<div id='red_count'>0</div>
+	</div>
+
+	<div class='spacer'>
 
 	</div>
 
-	<div class='grid-container' id='grid-container'>
-
-		<% @counter = 35 %>
-		<% for i in 0..5 %>
-			<% for j in 0..6 %>
-				<div class='square' id=<%= @counter.to_s %> >
-				</div>
-				<% @counter += 1 %>
-				<% @counter -= 14 if @counter % 7 == 0 %>
-			<% end %><br/>
-		<% end %>
-	</div>
-</div>
-
-
-<div id='black-container'>
-	<div id='black_count_title'>Black</div>
-	<div id='black_count'>0</div>
-</div>
-
-<div id='red-container'>
-	<div id='red_count_title'>Red</div>
-	<div id='red_count'>0</div>
 </div>
 
 <div class='spacer'>
 
 </div>
 
-</div>
