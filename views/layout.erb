@@ -96,7 +96,10 @@
 	  	});
 
 	  	$('.new-game-button').on('click', function() {
-	  		$('.new-game-button').fadeOut(200);
+	  		$('.new-game-button').fadeOut(200, function(){
+	  			$('.button-container').css('transition', 'opacity, 0.5s');
+	  			$('.button-container').css('opacity', '1');
+	  		});
 	  		currentTurn = 'black'
 	  		circleCount = [0, 0, 0, 0, 0, 0, 0];
 	  		count = 0;

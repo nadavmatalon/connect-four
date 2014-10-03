@@ -8,8 +8,9 @@
 	font-size: 40px;
 	font-weight: 500;
 	font-family: Sniglet, sans-serif;
+	word-spacing: 2px;
 	letter-spacing: 0.4px;
-	padding-top: 10px;
+	padding-top: 0px;
 	padding-bottom: 55px;
 	color: rgb(20, 90, 134);
 }
@@ -171,6 +172,7 @@
 }
 
 .button-container {
+	opacity: 0;
 	border: 1px solid;
 	border-color: transparent;
 	margin-left: -364px;
@@ -180,7 +182,7 @@
 }
 
 .new-game-container {
-	margin-top: -40px;
+	margin-top: -43px;
 	position: absolute;
 	display: inline-block;
 	margin-left: -54px;
@@ -188,23 +190,22 @@
 }
 
 .new-game-button {
-	display: none;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	background-color: rgb(209, 132, 231);
-	border: 1px solid transparent;
-	border-radius: 15px;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: rgb(232, 180, 248);
+	border: 1px solid rgb(168, 90, 195);
+	border-radius: 20px;
 	outline: none;
-	font-weight: 400;
+	font-weight: 200;
 	font-family: Sniglet, sans-serif;
-	letter-spacing: 0.4px;
-	font-size: 15px;
+	letter-spacing: 0.5px;
+	font-size: 18px;
 }
 
 .new-game-button:hover {
-	color: rgb(255, 255, 255);
+	color: rgb(54, 57, 222);
 }
 
 
