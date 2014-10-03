@@ -130,14 +130,28 @@
 }
 
 .color_black {
-	transition: background-color, 0.5s;
-    background-color: rgb(10, 10, 10);
+	/*transition: all, 0.5s, ease-out;*/
+ 	background: #000000;
+ 	background: linear-gradient(#6E6E6E 0%, #000000 100%);
+ 	background: -webkit-linear-gradient(#6E6E6E 0%, #000000 100%);
+ 	background: -o-linear-gradient(#6E6E6E 0%, #000000 100%);
+   	background: -o-linear-gradient(top, #6E6E6E 0%, #000000 100%);
+    background: -ms-linear-gradient(top, #6E6E6E 0%, #000000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6E6E6E', endColorstr='#000000',GradientType=0 );
+  	background: linear-gradient(top, #6E6E6E 0%, #000000 100%);
     z-index: -1 !important;
 }
 
 .color_red {
-	transition: background-color, 0.5s;
-    background-color: rgb(250, 10, 10);
+	/*transition: all, 0.5s, ease-out;*/
+ 	background: #95152C;
+ 	background: linear-gradient(#F95B6B 0%, #95152C 100%);
+ 	background: -webkit-linear-gradient(#F95B6B 0%, #95152C 100%);
+ 	background: -o-linear-gradient(#F95B6B 0%, #95152C 100%);
+   	background: -o-linear-gradient(top, #F95B6B 0%, #95152C 100%);
+    background: -ms-linear-gradient(top, #F95B6B 0%, #95152C 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F95B6B', endColorstr='#95152C',GradientType=0 );
+  	background: linear-gradient(top, #F95B6B 0%, #95152C 100%);
     z-index: -1 !important;
 }
 
@@ -170,7 +184,7 @@
 }
 
 .add_circle {
-	border: none;
+	border: 1px solid transparent;
 	width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -181,7 +195,8 @@
 }
 
 .add_circle:hover {
-
+	border: 2px solid rgba(188, 118, 3, 1);
+    border-radius: 52%;
 }
 
 .button-container {
@@ -274,7 +289,7 @@
 	font-weight: 500;
 	font-family: Sniglet, sans-serif;
 	padding-bottom: 15px;
-	color: rgb(250, 10, 10);
+	color: rgb(229, 39, 39);
 }
 
 #black_count {
@@ -287,9 +302,10 @@
 	font-size: 45px;
 	font-weight: 500;
 	font-family: Sniglet, sans-serif;
-	color: rgb(250, 10, 10);
+	color: rgb(229, 39, 39);
 }
 
 .spacer {
 	height: 30px;
 }
+
