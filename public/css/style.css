@@ -27,6 +27,7 @@
 	-webkit-box-shadow: 5px 5px 8px 2px #dddddd;
 	-moz-box-shadow: 5px 5px 8px 2px #dddddd;
 	box-shadow: 5px 5px 8px 2px #dddddd;
+	background-color: rgba(190, 127, 38, 0.18);
 }
 
 .circle-container {
