@@ -27,7 +27,14 @@
 	-webkit-box-shadow: 5px 5px 8px 2px #dddddd;
 	-moz-box-shadow: 5px 5px 8px 2px #dddddd;
 	box-shadow: 5px 5px 8px 2px #dddddd;
-	background-color: rgba(190, 127, 38, 0.18);
+	/*background-color: rgba(190, 127, 38, 0.18);*/
+
+/*	background-color: rgba(169, 38, 190, 0.18);
+
+	background-image: -webkit-linear-gradient(rgba(228, 218, 229, 0.09), rgba(145, 39, 181, 0.11));
+	background-image: -o-linear-gradient(rgba(228, 218, 229, 0.09), rgba(145, 39, 181, 0.11));
+    background-image: linear-gradient(rgba(228, 218, 229, 0.09), rgba(145, 39, 181, 0.11));
+*/
 }
 
 .circle-container {
@@ -74,7 +81,7 @@
 	width: 50px;
 	height: 50px;
 	margin-bottom: -2px;
-	border: 8px solid rgb(20, 90, 134);
+	border: 9px solid rgb(20, 90, 134);
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -83,9 +90,10 @@
 	margin-right: 2px;
 	margin-left: -5px;
 	display: inline-block;
-	-webkit-box-shadow: 2px 2px 2px 2px #eeeeee;
-	-moz-box-shadow: 2px 2px 2px 2px #eeeeee;
-	box-shadow: 2px 2px 2px 2px #eeeeee;
+/*	-webkit-box-shadow: 1px 1px 1px 1px rgba(140, 137, 137, 0.46);
+	-moz-box-shadow: 1px 1px 1px 1px rgba(140, 137, 137, 0.46);
+	box-shadow: 1px 1px 1px 1px rgba(140, 137, 137, 0.46);
+*/
 }
 
 
