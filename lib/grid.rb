@@ -2,10 +2,6 @@ require_relative 'circle'
 
 class Grid
 
-	NUMBER_OF_COLUMNS = 7
-	NUMBER_OF_ROWS = 6
-	NUMBER_OF_CIRCLES = 42
-
 	attr_reader :circles
 
 	def initialize
