@@ -5,6 +5,7 @@
 * [Screenshot](#screenshot)
 * [General Description](#general-description)
 * [Functional Description](#functional-description)
+* [See it Live on Heroku](#see-it-live-on-heroku)
 * [Browsers](#browsers)
 * [Testing](#testing)
 * [License](#license)
@@ -49,10 +50,19 @@ Here's a brief description of the game:
   either vertiacally, horizontally or diagonally.
 * The winner is the player who succeeded in connecting most sequences of four.
 
+##See it Live on Heroku
+
+A live version of the game can be found (and played!) at:
+
+[Connect Four on Heroku](http://makers-connect-four.herokuapp.com/)
+
+As I'm using Heroku's free hosting service, the app may take a bit of time to upload<br/>
+(Heroku's giros take time to wake up...), so please be patient.
+
 
 ##Browsers
 
-For the best user experience, use:
+For the best user experience, please use:
 
 * __Apple Safari__ (7.0.5)
 
