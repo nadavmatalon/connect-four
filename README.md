@@ -14,7 +14,7 @@
 
 <div width="400px" >
 	<a href="https://raw.githubusercontent.com/nadavmatalon/connect-four/master/public/images/connect-four-screenshot.png">
-		<img src="/public/images/connect-four-screenshot.png" width="400" height="420px" />
+		<img src="/public/images/connect-four-screenshot.png" width="600" height="420px" />
 	</a>
 </div>
 
