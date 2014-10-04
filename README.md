@@ -65,9 +65,9 @@ The app has been tested with and supports the following browsers:
 ##Testing
 
 Tests were written with [Rspec](http://rspec.info/) (3.0.4) 
-&amp; [Capybara](https://github.com/jnicklas/capybara)
+&amp; [Capybara](https://github.com/jnicklas/capybara) (2.4.1).
 
-To run the testing suite in terminal: 
+To run the tests in terminal: 
 
 ```bash
 $> cd connect-four
